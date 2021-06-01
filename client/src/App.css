@@ -47,7 +47,7 @@
     padding: 0px 30px;
 }
 
-.user-login-container input{
+.user-login-container button{
     padding: 15px;
     padding-left: 45px;
     cursor: pointer;
@@ -58,6 +58,10 @@
     margin: 10px 10px;
     font-size: 30px;
     color: rgb(248, 81, 3);
+}
+.user-login-container a{
+    color: black;
+    text-decoration: none;
 }
 
 /*User shoppıng bag */

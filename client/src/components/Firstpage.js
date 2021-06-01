@@ -1,9 +1,12 @@
 import React,{useState} from 'react'
 
+import{connect} from 'react-redux';
+import { fetchUser } from '../actions/index';
 
 
-function Firstpage() {
+function Firstpage(props) {
 
+  
   const [userclick, setuserclick] = useState(false)
   const [bagclick, setbagclick] = useState(false)
 
@@ -14,10 +17,10 @@ function Firstpage() {
   }
   const bagClickHandler=()=>{
     setbagclick(!bagclick)
-    
-    
   }
 
+  console.log(props.auth)
+  
     return (
         <div>  
          
@@ -31,10 +34,10 @@ function Firstpage() {
                   <h1>FAyYE</h1>
               </div>
               <div className="nav-right">
-                  <a>My account</a>
-                  <a><i onClick={userClickHandler} class="fa fa-user-o" aria-hidden="true"></i></a>
-                  <a><i class="fa fa-search" aria-hidden="true"></i></a>
-                  <a><i onClick={bagClickHandler} class="fa fa-shopping-bag" aria-hidden="true"></i></a>
+                  <a >{props.auth !== false ? "fatih" : "My Account"}</a>
+                  <a ><i onClick={userClickHandler} className="fa fa-user-o" aria-hidden="true"></i></a>
+                  <a ><i className="fa fa-search" aria-hidden="true"></i></a>
+                  <a ><i onClick={bagClickHandler} className="fa fa-shopping-bag" aria-hidden="true"></i></a>
               </div>
           </div>
           <div className="first-page-landing">
@@ -43,17 +46,17 @@ function Firstpage() {
           </div>
 
           <div  className={userclick === false?'user-login-container-none' : "user-login-container"} >
-            <div><h3>My Account</h3></div>
+            <div><h3 onClick={()=>props.fetchUser()} >My Account</h3></div>
 
             <div><p>Log in with your email easier and explore our world!</p></div>
 
-            <div><i class="fa fa-google" aria-hidden="true"></i><input type="button"  value="SIGN IN WİTH GOOGLE" /></div>
+            {props.auth !== false ? <div><i class="fa fa-sign-out" aria-hidden="true"></i><button><a href="/api/logout" >LOG OUT</a></button> </div>: <div> <i className="fa fa-google" aria-hidden="true"></i><button><a href="/auth/google" >SIGN IN WİTH GOOGLE</a></button> </div> }
           </div>
 
           <div className={bagclick === false?'user-shopping-bag-none' : "user-shopping-bag"}>
               <div><h3>My Shopping Bag</h3></div>
 
-              <div>itemler buraya</div>
+             
           </div>
 
 
@@ -61,9 +64,21 @@ function Firstpage() {
     )
 }
 
-export default Firstpage
+const mapStateToProps =state=>{
+  return {
+    auth:state.auth
+  }
+} 
+
+export default connect(mapStateToProps,{ fetchUser })(Firstpage);
+//export default Firstpage
 
 /*
+{props.auth.map(item=>(
+                <div>{item}</div>
+              ))}
+
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "fullpage.js/vendors/scrolloverflow"; // Optional. When using scrollOverflow:true

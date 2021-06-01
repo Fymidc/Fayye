@@ -3,7 +3,18 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     googleId: String,
-    name : String
+    name : String,
+    products:[]
 })
 
-mongoose.model('users',userSchema)
+const User=mongoose.model('users',userSchema)
+
+module.exports = User;
+
+
+/*{
+            productId:Number,
+            productName:String,
+            productQuantity:Number,
+            productPrice:Number,
+        }*/

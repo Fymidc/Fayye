@@ -2,6 +2,7 @@ const express = require ('express');
 const mongoose = require ('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const cors = require('cors')
 const keys = require('./config/keys');
 require('./models/User')
 require('./services/passport');
@@ -11,6 +12,8 @@ const authRoutes = require('./routes/authRoutes');
 mongoose.connect(keys.mongoURI)
 //videoda 2.20 de kaldım
 const app =express();
+
+app.use(cors());
 
 app.use(
     cookieSession({
@@ -26,6 +29,6 @@ authRoutes(app);//app parameteresini routelerde kullanmak için verdik çünkü 
 
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, ()=> console.log(`server started on ${port}`));

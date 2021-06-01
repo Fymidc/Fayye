@@ -1,16 +1,21 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import './App.css';
 import Firstpage from './components/Firstpage';
 import Secondpage from './components/Secondpage';
 import Thirdpage from './components/Thirdpage';
 import Fourthpage from './components/Fourthpage';
 import ReactFullpage from "@fullpage/react-fullpage";
-
+import * as actions from './actions' 
+import {connect} from 'react-redux'
 
 
 
 class App extends React.Component {
  
+  componentDidMount(){
+    this.props.fetchUser()
+  }
+
   render() {
     return (
       <ReactFullpage
@@ -48,6 +53,6 @@ class App extends React.Component {
 
 
 
-export default App;
+export default connect(null,actions)(App);
 
 
