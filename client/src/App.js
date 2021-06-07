@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Firstpage from './components/Firstpage';
+
 import Secondpage from './components/Secondpage';
 import Thirdpage from './components/Thirdpage';
 import Fourthpage from './components/Fourthpage';
@@ -27,6 +28,7 @@ class App extends React.Component {
             <div id="fullpage-wrapper">
               <div className="section section1">
                 <Firstpage/>
+                
               </div>
               
               <div className="section">

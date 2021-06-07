@@ -1,34 +1,38 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
-function Secondpage() {
 
-const [image, setimage] = useState("/images/knitwear.jpg")
+
+function Secondpage(props) {
+
+    
+
+const [image, setimage] = useState("https://images.pexels.com/photos/669381/pexels-photo-669381.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 
     const knitHandler =()=>{
-        setimage("/images/knitwear.jpg")
+        setimage("https://images.pexels.com/photos/669381/pexels-photo-669381.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
     const jacketHandler =()=>{
-        setimage("/images/jacket.jpg")
+        setimage("https://images.pexels.com/photos/1362484/pexels-photo-1362484.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
     const coatHandler =()=>{
-        setimage("/images/coat.jpg")
+        setimage("https://images.pexels.com/photos/1800454/pexels-photo-1800454.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
     const topsHandler =()=>{
-        setimage("/images/tops.jpg")
+        setimage("https://images.pexels.com/photos/5331221/pexels-photo-5331221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
     const skirtHandler =()=>{
-        setimage("/images/skirt.jpg")
+        setimage("https://images.pexels.com/photos/4770744/pexels-photo-4770744.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
     const dressesHandler =()=>{
-        setimage("/images/dress.jpg")
+        setimage("https://images.pexels.com/photos/4921205/pexels-photo-4921205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
         
     }
-
+    
     return (
         <div className="second-page">
           <div className="second-page-flex"> 
@@ -51,7 +55,9 @@ const [image, setimage] = useState("/images/knitwear.jpg")
     )
 }
 
-export default Secondpage
+
+
+export default Secondpage;
 
 
 

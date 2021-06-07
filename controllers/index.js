@@ -1,14 +1,14 @@
-const User = require('../models/User.js');
+const Products = require('../models/ProductData');
+const data=require('../api/index')
 
-const createItem = async (req,res)=>{ 
+const getItem = async (req,res)=>{ 
+   
+   // console.log(data.module[0].productname)
     try {
-        User.findOne({products:req.body});
-        res.status(200).json();
-        let user = new User({
-            products:[req.body
-            ]
-        })
-        await user.save();
+        new Products({productImg:data.module[0].imgURL,
+            productName:data.module[0].productname,
+            productPrice:data.module[0].productprice}).save()
+
     } catch (error) {
         res.status(409).json({
             message:error.message,
@@ -16,15 +16,16 @@ const createItem = async (req,res)=>{
     }
 }
 
-const getItem = async (req,res)=>{
-    try {
-        const items = await User.find();
-        res.status(200).json(items)
-    } catch (error) {
-        res.status(404).json({
-            message:error.message,
-        })
-    }
-}
+module.exports = getItem;
 
-module.exports = createItem,getItem;
+const showItem = async (req,res)=>{ 
+   
+    // console.log(data.module[0].productname) 
+    Products.findOne({},(err,result)=>{
+        if(err) throw err;
+        res.send(result)
+    })
+    
+ }
+ 
+ module.exports = showItem

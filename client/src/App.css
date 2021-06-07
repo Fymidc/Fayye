@@ -76,6 +76,18 @@
     display: block;
 }
 
+.buybtn{
+    display: flex;
+    position: absolute;
+    padding: 15px 15px 15px 50px;
+    cursor:pointer;
+    bottom:4%;
+    width: 100%;
+    justify-content: center;
+    
+    
+}
+
 .user-shopping-bag-none{
     display: none;
 }

@@ -1,12 +1,12 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy":{
-    "/auth/google":{
-      "target":"http://localhost:5000"
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
     },
-    "/api/*":{
-      "target":"http://localhost:5000"
+    "/api/*": {
+      "target": "http://localhost:5000"
     }
   },
   "private": true,
@@ -22,6 +22,7 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-scripts": "^1.0.10",
+    "react-stripe-checkout": "^2.6.3",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",

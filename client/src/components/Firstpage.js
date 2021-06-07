@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Payments from './Payments'
 
 import{connect} from 'react-redux';
 import { fetchUser } from '../actions/index';
@@ -19,7 +20,7 @@ function Firstpage(props) {
     setbagclick(!bagclick)
   }
 
-  console.log(props.auth)
+  
   
     return (
         <div>  
@@ -41,7 +42,7 @@ function Firstpage(props) {
               </div>
           </div>
           <div className="first-page-landing">
-              <img className="landing-bg" src="/images/knitwear.jpg" alt="bg-img" ></img>
+              <img className="landing-bg" src="https://images.pexels.com/photos/3223552/pexels-photo-3223552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bg-img" ></img>
 
           </div>
 
@@ -50,12 +51,12 @@ function Firstpage(props) {
 
             <div><p>Log in with your email easier and explore our world!</p></div>
 
-            {props.auth !== false ? <div><i class="fa fa-sign-out" aria-hidden="true"></i><button><a href="/api/logout" >LOG OUT</a></button> </div>: <div> <i className="fa fa-google" aria-hidden="true"></i><button><a href="/auth/google" >SIGN IN WİTH GOOGLE</a></button> </div> }
+            {props.auth !== false ? <div><i className="fa fa-sign-out" aria-hidden="true"></i><button><a href="/api/logout" >LOG OUT</a></button></div>: <div> <i className="fa fa-google" aria-hidden="true"></i><button><a href="/auth/google" >SIGN IN WİTH GOOGLE</a></button> </div> }
           </div>
 
           <div className={bagclick === false?'user-shopping-bag-none' : "user-shopping-bag"}>
               <div><h3>My Shopping Bag</h3></div>
-
+              {props.auth !== false ? <div><Payments/></div>:""}
              
           </div>
 
