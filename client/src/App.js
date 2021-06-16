@@ -11,13 +11,17 @@ import {connect} from 'react-redux'
 
 
 
+
 class App extends React.Component {
- 
+
   componentDidMount(){
     this.props.fetchUser()
   }
 
+  
   render() {
+    
+    
     return (
       <ReactFullpage
         
@@ -53,8 +57,6 @@ class App extends React.Component {
   }
 }
 
-
-
-export default connect(null,actions)(App);
+export default connect(null,actions) (App);
 
 

@@ -28,8 +28,8 @@
     position: absolute;
     right: 0;
     top: 10%;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgba(0, 0, 0, 0.384);
+    background-color: rgb(245, 235, 345);
+    border: 1px solid rgba(0, 0, 0, 0.084);
     display: block;
 }
 
@@ -67,12 +67,12 @@
 /*User shoppıng bag */
 .user-shopping-bag{
     width: 25%;
-    height: 60vh;
+    height: 90vh;
     position: absolute;
     right: 0;
     top: 10%;
     background-color: rgb(245, 245, 245);
-    border: 1px solid rgba(0, 0, 0, 0.397);
+    border: 1px solid rgba(0, 0, 0, 0.097);
     display: block;
 }
 
@@ -81,6 +81,8 @@
     position: absolute;
     padding: 15px 15px 15px 50px;
     cursor:pointer;
+    border:none;
+    background:orange;
     bottom:4%;
     width: 100%;
     justify-content: center;
@@ -92,11 +94,34 @@
     display: none;
 }
 
-.user-shopping-bag div{
+.user-shopping-bag h3{
+    padding:10px;
     width: 100%;
     text-align: center;
 }
 
+.cart-items{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cart-items li{
+    list-style: none;
+    cursor:default;
+}
+.cart-items p{
+    cursor:pointer;
+}
+.cart-items img{
+    width: 10%;
+}
+
+.totalprice{
+    text-align:center;
+    margin-top:70%;
+}
 /*landing bg*/
 .first-page-landing{
     width: 100%;
@@ -162,10 +187,27 @@
 
 /*THİRD PAGE CAROUSEL*/
 
+.imgsection{
+    position: absolute;
+    width: 100%;
+    
+    top: 30%;
+    display: flex;
+   
+}
+.imgsection2{
+    width: 100%;
+    text-align: center;
+}
+.imgsection2 button{
+    padding: 10px;
+    cursor: pointer;
+    margin-top:10px ;
+}
+
 .image-slider{
-    
-    width: 40%;
-    
+    width: 45%;
+        
 }
 
 .third-page-header{

@@ -30,6 +30,7 @@ app.use(
 app.use(passport.initialize()); //expressin cookileri kullanmasın için 
 app.use(passport.session());
 
+
 authRoutes(app);//app parameteresini routelerde kullanmak için verdik çünkü express app burada çalışıyor.
 billRoutes(app);//app parameteresini routelerde kullanmak için verdik çünkü express app burada çalışıyor.
 
