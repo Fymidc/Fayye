@@ -53,14 +53,24 @@ export const addItem =(item)=>async dispatch=>{
 }
 
 export const deleteItem =(item)=>async dispatch=>{
-    console.log(item)
-    //await axios.delete('/api/cart',item)
+   
+    await axios({
+        method: 'DELETE',
+       // mode:'cors',
+        url: '/api/cart-delete',
+        //headers:{ 'Access-Control-Allow-Origin': true },
+        data: item
+   })
+  
+//alttaki axios delete çalışmadı nedenını anlamadım  
+  //await axios.delete('/api/cart-delete',item)
+    
   try {
     
        dispatch({
 
        type:"DELETE_ITEM",
-       payload:item
+       payload:item._id
    })
   } catch (error) {
       console.log(error)

@@ -2,10 +2,12 @@ const passport = require('passport');
 const requireLogin=require('../middlewares/requireLogin')
 const axios = require('axios')
 
+const mongoose= require('mongoose')
+const Cart = require('../models/Cart');
 
 
 const data = require('../api/index')
-const {addtoChart,getItem,showItem}=require('../controllers/index.js')
+const {addtoChart,getItem,showItem,deleteItem}=require('../controllers/index.js')
 
 
 
@@ -30,10 +32,11 @@ module.exports =(app)=>{ //app paramatresini server.js den aldık parametre olar
     });
 
     app.use('/api/items',showItem)
+    
 
     app.use('/api/items/post',getItem)
 
     app.use('/api/cart',addtoChart)
     
-    
+    app.use('/api/cart-delete', deleteItem)
 }

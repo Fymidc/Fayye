@@ -25,12 +25,9 @@ const itemsReducer =(state=initialState,action)=>{
             };
 
         case "DELETE_ITEM":
-
-             const item=state.cart.findIndex(x=>x.title===action.payload.title)
-
             return {
                 ...state,               
-                            
+                bag:state.bag.filter(bags => bags._id !== action.payload)
             };
 
         case "SHOW_ITEM":

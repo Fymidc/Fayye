@@ -24,12 +24,25 @@ const getItem = async (req,res)=>{
 
 
 const showItem = async (req,res)=>{ 
-  
    // console.log(data.module[0].productname) 
     Products.find((err,result)=>{
         if(err) throw err;
         res.send(result)
     })
+    
+}
+
+const deleteItem = async (req,res)=>{ 
+    const {_id}=req.body
+    //console.log(_id)
+    try {
+        deletedItem=await Cart.findByIdAndRemove(_id)
+        res.json(deletedItem)
+    } catch (error) {
+        res.status(409).json({
+            message:error.message,
+        });
+    }
     
 }
 
@@ -75,7 +88,8 @@ const addtoChart = async (req,res)=>{
 module.exports={
     getItem,
     showItem,
-    addtoChart
+    addtoChart,
+   deleteItem
 }
 
 
