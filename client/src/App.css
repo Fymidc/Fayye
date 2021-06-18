@@ -1,3 +1,6 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+}
 .nav-bar{
     color: white;
     display: flex;
@@ -134,6 +137,45 @@
     height: 100vh;
 }
 
+/*first page responsive*/
+@media screen and (max-width: 800px) {
+    .nav-bar {
+      color: black;
+    }
+    .user-login-container{
+        width: 30%;
+    }
+
+    .user-shopping-bag{
+        width: 35%;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .nav-left a{
+       display: none;
+    }
+
+    .nav-right a{
+        margin-left: 10px;
+    }
+
+    .user-login-container{
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .user-shopping-bag{
+        width: 100%;
+
+    }
+
+}
+
+
+
 /*SECOND PAGE*/
 
 .second-page-flex{
@@ -185,6 +227,33 @@
     
 }
 
+
+@media screen and (max-width: 600px) {
+   .second-page-flex{
+       color: rgb(37, 37, 37);
+       font-weight: bold;
+       
+       
+    }
+
+    .second-page-img{
+        z-index: -2;
+        min-width: 100%;
+    }
+
+    .second-page-img img{
+        position: absolute;
+        min-width: 75%;
+    }
+
+    .second-page-list{
+        z-index: 2;
+        margin-right: 40px;
+    }
+}
+
+
+
 /*THİRD PAGE CAROUSEL*/
 
 .imgsection{
@@ -215,6 +284,39 @@
     margin-left: 10%;
     top: 10%;
 }
+
+
+@media screen and (max-width: 600px) {
+    .third-page-header{
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .imgsection{
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .imgsection2{
+        width: 100%;
+        display: flex;
+        padding: 5px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .image-slider{
+        width:25% ;
+    }
+
+    .imgsection2 button{
+        padding: 5px;
+        
+    }
+ }
+ 
+ 
 
 /*Fourth page*/
 
@@ -295,3 +397,29 @@
     
     
 }
+
+
+
+@media screen and (max-width: 600px) {
+   .footer-box{
+       
+   }
+
+   .footer-box ul{
+       display: none;
+   }
+
+   .footer-box b{
+       display: none;
+   }
+
+   .footer-email{
+       margin-top: 25%;
+   }
+
+   .end {    
+    height: 20vh;
+    margin-top: 25%;
+   }
+ }
+

@@ -40,7 +40,7 @@ function Thirdpage(props) {
    //{props.items?console.log(props.items):console.log("olmadı")}
     return (
         <div>
-
+            
             <div className="third-page-header" >
                 <p>SPOTLİGHT</p>
                 <h1>EXPLORE OUR SEASONAL HIGHLIGHTS</h1>

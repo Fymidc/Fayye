@@ -40,6 +40,7 @@ export const fetchItems = ()=>dispatch=>{
 
 export const addItem =(item)=>async dispatch=>{
     await axios.post('/api/cart',item)
+    alert("item added")
   try {
     
        dispatch({

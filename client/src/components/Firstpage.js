@@ -43,7 +43,7 @@ function Firstpage(props) {
                   <a>The Brand</a>
               </div>
               <div className="brand-name">
-                  <h1>FAyYE</h1>
+                  <h1>fayye</h1>
               </div>
               <div className="nav-right">
                   <a >{props.auth.state!== false ?"fatih":"My Account"}</a>

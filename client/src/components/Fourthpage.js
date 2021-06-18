@@ -16,7 +16,7 @@ function Fourthpage() {
 
             <div className="footer">
                 <div className="footer-brand-name">
-                    <h1>FaYYE</h1>
+                    <h1>fayye</h1>
                 </div>
 
                 <div className="footer-box" >
@@ -47,7 +47,7 @@ function Fourthpage() {
                      </ul>
                  </div>
 
-                 <div>
+                 <div className="footer-email">
                      <h3>WE HAVE NICE THINGS TO TELL YOU</h3>
                      <input type="button" value="YOUR EMAİL   SUBSCRİBE"/>
                  </div>
@@ -56,7 +56,7 @@ function Fourthpage() {
 
                 <div className="end">
                     <div>
-                        <p>2021 Fayye All right reserved </p>
+                        <p>2021 fayye All right reserved </p>
                     </div>
                     <div >
                         <ul>
